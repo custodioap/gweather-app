@@ -24,8 +24,7 @@
     <ImageView
         android:id="@+id/currentIcon"
         android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src=""/>
+        android:layout_height="100dp"/>
 
     <TextView
         android:id="@+id/currentTemp"
