@@ -43,7 +43,7 @@ fun loadApiKey(): String {
 buildConfigField("String", "API_KEY", "\"${loadApiKey()}\"")
 ```
 
-5. **Access the API Key in Your Code**  
+4. **Access the API Key in Your Code**  
 Retrieve the API key in your code using Gradle properties, for example:  
 ```kotlin
 val apiKey = BuildConfig.openweather_api_key
