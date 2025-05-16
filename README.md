@@ -52,5 +52,5 @@ val apiKey = BuildConfig.API_KEY
 
 ## Authors
 
-- [@custodioap](https://github.com/users/custodioap)
+- [@custodioap](https://github.com/custodioap)
 
