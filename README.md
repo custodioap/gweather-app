@@ -28,10 +28,22 @@ This WeatherApp connects to the OpenWeather API to provide current weather infor
    Register for a free API key at [OpenWeather](https://openweathermap.org/api).
 
 2. **Add Your API Key in `local.properties`**  
-   To keep your API key secure, add it to your project's `local.properties` file (create it if it doesn't exist) with the following line:  
+   To keep your API key secure, add it to your project's `local.properties` file (create it if it doesn't exist) with the following line:
+```kotlin  
 openweather_api_key=your_api_key
+```
+3. **Add this on your `build.gradle.kts` app and call the method in `buildTypes`**
+```kotlin
+fun loadApiKey(): String {
+    val properties = Properties()
+    properties.load(project.rootProject.file("local.properties").inputStream())
+    return properties.getProperty("openweather_api_key") ?: ""
+}
 
-3. **Access the API Key in Your Code**  
+buildConfigField("String", "API_KEY", "\"${loadApiKey()}\"")
+```
+
+5. **Access the API Key in Your Code**  
 Retrieve the API key in your code using Gradle properties, for example:  
 ```kotlin
 val apiKey = BuildConfig.openweather_api_key
